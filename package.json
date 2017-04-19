@@ -1,1 +1,40 @@
-{     "devDependencies": {         "is-my-json-valid": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-is-my-json-valid",     "homepage": "https://github.com/npmtest/node-npmtest-is-my-json-valid",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-is-my-json-valid.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### test coverage for  [is-my-json-valid (v2.16.0)](https://github.com/mafintosh/is-my-json-valid)  [![npm package](https://img.shields.io/npm/v/npmtest-is-my-json-valid.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-is-my-json-valid) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-is-my-json-valid.svg)](https://travis-ci.org/npmtest/node-npmtest-is-my-json-valid)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "is-my-json-valid": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-is-my-json-valid",
+    "keywords": [
+        "coverage",
+        "test",
+        "is-my-json-valid"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_is_my_json_valid.js",
+    "name": "npmtest-is-my-json-valid",
+    "nameAlias": "npmtest_is_my_json_valid",
+    "nameOriginal": "npmtest-is-my-json-valid",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-is-my-json-valid.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
